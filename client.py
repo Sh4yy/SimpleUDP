@@ -29,13 +29,15 @@ class UDPPunch:
 		return util.byte2ip(resp)
 
 
-IP, PORT = "0.0.0.0", 8081
-sock = socket.socket(socket.AF_INET, socket.SOCK_DGRAM)
-sock.setsockopt(socket.SOL_SOCKET, socket.SO_REUSEADDR, 1)
-sock.bind((IP, PORT))
+def example():
+	
+	IP, PORT = "0.0.0.0", 8081
+	sock = socket.socket(socket.AF_INET, socket.SOCK_DGRAM)
+	sock.setsockopt(socket.SOL_SOCKET, socket.SO_REUSEADDR, 1)
+	sock.bind((IP, PORT))
 
-puncher = UDPPunch(("0.0.0.0", 5700))
-print(puncher.get_addr(sock))
+	puncher = UDPPunch(("0.0.0.0", 5700))
+	print(puncher.get_addr(sock))
 
 
 
